@@ -61,7 +61,7 @@
             <form method="post" enctype="multipart/form-data">
                 <h4>Choose a file</h4>
                 {% csrf_token %}
-                {{ form.photo }}
+                <input type="file" name="photo">
                 <button type="submit" class="btn btn-secondary ephoto change-photo">Change photo</button>
                 <span id="close-modal" class="material-symbols-outlined">close</span>
             </form>

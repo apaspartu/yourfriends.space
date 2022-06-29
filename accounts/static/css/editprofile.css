@@ -58,6 +58,7 @@
 .modal-change-photo form input {
     text-overflow: hidden;
     max-width: 100%;
+    margin: 20px 0;
 }
 #id_photo {
     margin: 30px 0;

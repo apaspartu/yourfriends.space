@@ -158,7 +158,6 @@ def edit_profile(request, username):
         return redirect(reverse('accounts:profile', args=[username]))
 
     invalid = False
-    form = UploadForm()
     if request.method == 'POST':
         if request.POST.get('save', None):
             first_name = request.POST.get('firstname', '')
@@ -194,7 +193,7 @@ def edit_profile(request, username):
     profile_photo = get_profile_photo(user)
 
     context = {'from_profile': username, 'profile': profile, 'user': user,
-               'profile_photo': profile_photo, 'invalid': invalid, 'form': form}
+               'profile_photo': profile_photo, 'invalid': invalid}
     return render(request, 'accounts/edit_profile.html', context)
 
 
