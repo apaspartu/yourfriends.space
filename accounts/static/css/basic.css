@@ -8,6 +8,7 @@ body {
     align-items: center;
     margin: 0;
 }
+
 header {
     position: fixed;
     width: 100%;
@@ -167,8 +168,6 @@ p.myinfo {
 .ebutton {
     background-color: rgb(82, 135, 241);
     padding: 6px 30px;
-    display: flex;
-    justify-content: center;
 }
 
 .history {
