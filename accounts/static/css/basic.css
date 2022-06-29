@@ -4,7 +4,8 @@
 body {
     font-family: "Lato", Arial, Helvetica, sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin: 0;
 }
 header {
@@ -39,7 +40,6 @@ h1, h2, h3, h4, h5, h6, p, div, span, a, input, textarea {
     background-color: white;
     border-radius: 10px 15px;
     width: fit-content;
-    max-width: 90%;
     font-size: 18pt;
 }
 
@@ -99,6 +99,7 @@ h1, h2, h3, h4, h5, h6, p, div, span, a, input, textarea {
 main {
     width: 700px;
     margin: 0;
+
 }
 .aboutme {
     position: relative;
@@ -246,6 +247,9 @@ p.myinfo {
 }
 
 @media screen and (max-width: 770px){
+    main {
+        width: 100%;
+    }
     #fsearch {
         width: auto;
     }
@@ -261,7 +265,7 @@ p.myinfo {
         margin-top: 70px;
     }
     .writepost {
-        padding: 15px 10px;
+        padding: 20px 15px;
     }
     header {
         z-index: 10;

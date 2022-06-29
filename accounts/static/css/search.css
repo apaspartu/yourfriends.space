@@ -47,5 +47,6 @@ main h2 {
 @media screen and (max-width:770px) {
     main {
         margin-top: 110px;
+        width: 100%;
     }
 }
