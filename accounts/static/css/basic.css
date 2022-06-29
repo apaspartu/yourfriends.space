@@ -5,6 +5,7 @@ body {
     font-family: "Lato", Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: center;
+    margin: 0;
 }
 header {
     position: fixed;
@@ -37,8 +38,8 @@ h1, h2, h3, h4, h5, h6, p, div, span, a, input, textarea {
     padding: 10px 15px;
     background-color: white;
     border-radius: 10px 15px;
-    width: max-content;
-    font-size: 23pt;
+    width: fit-content;
+    font-size: 18pt;
 }
 
 #fsearch {
@@ -96,6 +97,7 @@ h1, h2, h3, h4, h5, h6, p, div, span, a, input, textarea {
 }
 main {
     width: 700px;
+    margin: 0;
 }
 .aboutme {
     position: relative;

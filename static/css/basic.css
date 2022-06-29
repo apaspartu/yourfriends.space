@@ -31,14 +31,14 @@ h1, h2, h3, h4, h5, h6, p, div, span, a, input, textarea {
     max-width: 100%;
 }
 .nothing {
+    font-size: 18pt;
     text-align: center;
-    margin: 60px auto 50px auto;
+    margin: 60px 15px;
     color: red;
     padding: 10px 15px;
     background-color: white;
     border-radius: 10px 15px;
-    width: max-content;
-    font-size: 23pt;
+    width: 90%;
 }
 
 #fsearch {
