@@ -14,7 +14,7 @@ def get_profile_photo(user):
     if profile.photo:
         profile_photo = profile.photo
     else:
-        profile_photo = '/media/profile_pictures/blankprofile.png'
+        profile_photo = 'https://res.cloudinary.com/hchmalldq/image/upload/v1656533368/blankprofile_pgklet.png'
 
     return profile_photo
 
