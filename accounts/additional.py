@@ -33,9 +33,7 @@ def save_photo(photo, profile):
     img.save(fp=buffer, format=imf)
     cf = ContentFile(buffer.getvalue())
 
-    old_im = profile.photo
     image_name = profile.user.username + f'.{imf}'
     im = cloudinary.uploader.upload(InMemoryUploadedFile(cf, None, image_name, f'image/{imf.lower()}', cf.tell, None))
-    cloudinary.api.
     profile.photo = im['url']
     profile.save()
