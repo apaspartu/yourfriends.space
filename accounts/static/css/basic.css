@@ -39,6 +39,7 @@ h1, h2, h3, h4, h5, h6, p, div, span, a, input, textarea {
     background-color: white;
     border-radius: 10px 15px;
     width: fit-content;
+    max-width: 90%;
     font-size: 18pt;
 }
 
