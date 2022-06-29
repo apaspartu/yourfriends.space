@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 
 class Post(models.Model):
@@ -20,7 +21,7 @@ class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     bio = models.TextField(max_length=500, null=False, default='There is nothing yet...')
     birth_date = models.DateField(null=False, default='2000-12-01')
-    photo = models.ImageField(upload_to='profile_pictures/', null=True)
+    photo = CloudinaryField('image', null=True)
 
     def __str__(self):
         return str(self.user)

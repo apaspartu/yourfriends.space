@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 from pathlib import Path
+import cloudinary.api
 #from dotenv import load_dotenv
 
 #load_dotenv()
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts.apps.AccountsConfig',
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
@@ -89,6 +91,12 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+cloudinary.config(
+  cloud_name="hchmalldq",
+  api_key="663168998476652",
+  api_secret="7b3uOQc1cPegEi5XBeL2_2J0eT0"
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
