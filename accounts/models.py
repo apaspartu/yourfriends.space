@@ -20,7 +20,7 @@ class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     bio = models.TextField(max_length=500, null=False, default='There is nothing yet...')
     birth_date = models.DateField(null=False, default='2000-12-01')
-    photo = models.ImageField(upload_to='media/profile_pictures/', null=True)
+    photo = models.ImageField(upload_to='profile_pictures/', null=True)
 
     def __str__(self):
         return str(self.user)
