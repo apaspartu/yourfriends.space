@@ -168,6 +168,7 @@ p.myinfo {
     background-color: rgb(82, 135, 241);
     padding: 6px 30px;
     display: flex;
+    justify-content: center;
 }
 
 .history {

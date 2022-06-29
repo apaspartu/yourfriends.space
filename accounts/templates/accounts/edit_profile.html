@@ -51,7 +51,7 @@
                     <textarea name="bio" class="itext" style="resize: none;" placeholder="I like dogs, reading and rest outdoor." rows="4" name="emyinfo" maxlength="500">{% if profile.bio %}{{ profile.bio }}{% endif %}</textarea>
                     <label for="ebirthday">Birthday</label>
                     <input type="date" class="itext" name="birthday" min="1900-01-01" value='{% if profile.birth_date %}{{ profile.birth_date|date:"Y-m-d" }}{% else %}2000-12-01{% endif %}'>
-                    <button type="submit" name="save" class="btn btn-primary ebutton" value="Save">Save</button>
+                    <input type="submit" name="save" class="btn btn-primary ebutton" value="Save">
                 </form>
             </div>
             <h4 class="logo">YourFriends.Space</h4>
