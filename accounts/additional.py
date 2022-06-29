@@ -5,6 +5,7 @@ from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.core.files.base import ContentFile
 from django.conf import settings
 import cloudinary
+import cloudinary.api
 import cloudinary.uploader
 
 
@@ -27,11 +28,14 @@ def save_photo(photo, profile):
     if height > width:
         img = img.crop((0, 0, width, width))
 
+    img = img.resize((200, 200))
     buffer = BytesIO()
     img.save(fp=buffer, format=imf)
     cf = ContentFile(buffer.getvalue())
 
+    old_im = profile.photo
     image_name = profile.user.username + f'.{imf}'
     im = cloudinary.uploader.upload(InMemoryUploadedFile(cf, None, image_name, f'image/{imf.lower()}', cf.tell, None))
+    cloudinary.api.
     profile.photo = im['url']
     profile.save()
