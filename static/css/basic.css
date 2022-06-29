@@ -1,0 +1,274 @@
+::selection {
+    background-color: rgba(105, 250, 173, 0.795);
+}
+body {
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+header {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid lightgray;
+    z-index: 5;
+}
+h1, h2, h3, h4, h5, h6, p, div, span, a, input, textarea {
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+}
+.error {
+    text-align: center;
+    color: white;
+    background-color: red;
+    padding: 5px 10px;
+    border-radius: 7px;
+    margin: auto;
+    margin-bottom: 20px;
+    max-width: 100%;
+}
+.nothing {
+    text-align: center;
+    margin: 60px auto 50px auto;
+    color: red;
+    padding: 10px 15px;
+    background-color: white;
+    border-radius: 10px 15px;
+    width: max-content;
+    font-size: 23pt;
+}
+
+#fsearch {
+    width: 40ch;
+    padding: 5px 15px;
+    border: 1px solid rgb(245, 208, 239);
+    background-color: rgb(241, 216, 246);
+    border-radius: 20px;
+    caret-color: rgb(134, 27, 234);
+    outline: none;
+    transition: all 0.1s;
+    color:rgb(142, 21, 198);
+}
+#fsearch:hover, #fsearch:focus {
+    box-shadow: 0 0 10px 3px rgb(255, 192, 241);
+    border-color: rgb(232, 170, 237);
+}
+
+#fsearchsubmit {
+    padding: 5px 25px;
+    background-color: rgb(145, 128, 250);
+    border: 1px solid rgb(125, 125, 240);
+    border-radius: 20px;
+    color: white;
+    transition: all 0.2s;
+}
+#fsearchsubmit:hover {
+    color: rgb(113, 96, 222);
+    background-color: white;
+    border: 1px solid rgb(108, 108, 238);
+}
+
+.backhome {
+    position: fixed;
+    top: 5px;
+    left: 20px;
+    padding: 8px 15px;
+    background-color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    z-index: 6;
+    display: flex;
+    gap: 20px;
+}
+.backhome a {
+    text-decoration: none;
+}
+.alink {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    color:rgb(64, 96, 176);
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+}
+main {
+    width: 700px;
+}
+.aboutme {
+    position: relative;
+    margin: 10px;
+    margin-top: 100px;
+    border: 2px solid lightgray;
+    box-shadow: 0 0 1px 1px lightgray;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.729);
+    padding: 30px;
+    display: flex;
+    gap: 30px;
+}
+.myphoto {
+    width: 180px;
+    height: 180px;
+    min-width: 180px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 3px 2px rgb(196, 196, 196);
+}
+.myphoto img {
+    height: 100%;
+}
+.info {
+    width: 100%;
+}
+.info p {
+    padding: 4px 10px;
+    background-color: rgb(249, 239, 151);
+    border-radius: 5px;
+    width: fit-content;
+}
+.info p:first-child {
+    font-size: 22pt;
+    font-family: "Lato";
+    background-color: rgb(233, 167, 255);
+    text-align: center;
+}
+.info p:nth-child(2) {
+    font-size: 13pt;
+    background-color: rgb(133, 246, 163);
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+p.myinfo {
+    min-height: 9ch;
+    width: 100%;
+}
+.info span {
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+}
+.mfbutton {
+    background-color: rgb(6, 188, 12);
+    border: 0;
+    padding: 6px 30px;
+}
+.ebutton {
+    background-color: rgb(82, 135, 241);
+    padding: 6px 30px;
+    display: flex;
+}
+
+.history {
+    margin-top: 30px;
+}
+.writepost {
+    margin-top: 20px;
+    border: 2px solid lightgray;
+    box-shadow: 0 0 1px 1px lightgray;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.729);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+.itext {
+    border: 0;
+    padding: 8px 10px;
+    border-radius: 8px;
+    outline: none;
+    background-color: rgb(242, 181, 253);
+    transition: 0.2s all;
+    resize: none;
+}
+.itext:focus {
+    background-color: white;
+}
+.post {
+    position: relative;
+    border: 2px solid lightgray;
+    box-shadow: 0 0 1px 1px lightgray;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.729);
+    padding: 20px;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+.post span {
+    display: flex;
+    justify-content: right;
+}
+.post {
+    display: block;
+}
+.post p {
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 12pt;
+    height: fit-content;
+    width: 100%;
+    display: block;
+}
+.logo {
+    text-align: center;
+    font-family: "Kdam Thmor Pro", Arial, Helvetica, sans-serif;
+    font-size: 26pt;
+    margin: 60px 0;
+    user-select: none;
+}
+.deletepost {
+    position: absolute;
+    display: block;
+    right: 20px;
+    top: 20px;
+    width: auto;
+    height: auto;
+    border: 0;
+    background-color: transparent;
+}
+.deletepost:hover {
+    color: red;
+}
+.deletepost:active {
+    color: brown;
+}
+
+@media screen and (max-width: 770px){
+    #fsearch {
+        width: auto;
+    }
+    .backhome {
+        position: absolute;
+        left: auto;
+        margin: auto;
+        top: 80px;
+    }
+    .aboutme {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 70px;
+    }
+    .writepost {
+        padding: 15px 10px;
+    }
+    header {
+        z-index: 10;
+    }
+    .logo {
+        font-size: 16pt;
+    }
+}
+@media screen and (max-width: 350px) {
+    #fsearch {
+        width: 15ch;
+    }
+}

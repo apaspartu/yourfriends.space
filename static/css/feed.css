@@ -1,0 +1,74 @@
+main {
+    margin-top: 60px;
+}
+main h2 {
+    text-align: center;
+    margin: 40px 0;
+}
+.post {
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.post span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.post span p {
+    margin: 0;
+    font-size: 16pt;
+    width: fit-content;
+}
+.post a {
+    text-decoration: none;
+}
+.post h4 {
+    text-align: left;
+    color: rgb(25, 25, 25);
+    border-bottom: 4px solid rgb(153, 119, 247);
+    padding: 3px 10px;
+}
+.post .post_body {
+    font-size: 13pt;
+    width: 100%;
+}
+.createrim {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+}
+.post .post-time {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    margin-bottom: 0;
+}
+.qmark {
+    color: rgb(255, 255, 255);
+    background-color: rgb(100, 211, 56);
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 14pt;
+}
+.qmark:hover {
+    color: aquamarine;
+}
+@media screen and (max-width: 770px) {
+    main {
+        margin-top: 110px;
+    }
+    .post span {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .post {
+        padding: 15px;
+    }
+    .post p {
+        font-size: 11pt;
+    }
+}
