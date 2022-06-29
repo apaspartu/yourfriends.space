@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{% static 'css/background.css' %}" rel="stylesheet">
+        <link href="{% static 'css/basic.css' %}" rel="stylesheet">
+        <link href="{% static 'css/login.css' %}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up</title>
+    </head>
+    <body>
+        <div class="background"></div>
+        <main>
+            <form method="post">
+                <h1>Welcome!<br>Create an account</h1>
+                {% csrf_token %}
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+                {% if message %}
+                <h6 class="error">{{ message }}</h6>
+                {% endif %}
+                <input id="submitbtn" type="submit" class="btn btn-primary" value="Sign Up">
+                <a href="{% url 'accounts:login' %}" class="switchlog">Or log in to an existing account</a>
+            </form>
+            <h1 class="logo">YourFriends.Space</h1>
+        </main>
+    </body>
+</html>
