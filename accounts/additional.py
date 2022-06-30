@@ -37,8 +37,6 @@ def save_photo(photo, profile):
 
     w, h = get_image_dimensions(photo)
     min_value = min(w, h)
-    im = cloudinary.uploader.upload(photo, eager=[
-                                        {"width": min_value, "height": min_value, "crop": "crop"},
-                                        {"width": 200, "height": 200, "crop": "scale", 'gravity': 'north'}])
+    im = cloudinary.uploader.upload(photo, eager=f'c_crop,w_{min_value},h_{min_value}/w_200,h_200,c_scale,g_north')
     profile.photo = im['url']
     profile.save()
