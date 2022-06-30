@@ -29,7 +29,6 @@ def save_photo(photo, profile):
     if height > width:
         img = img.crop((0, 0, width, width))
 
-    img = img.resize((200, 200))
     buffer = BytesIO()
     img.save(fp=buffer, format=imf)
     cf = ContentFile(buffer.getvalue())
