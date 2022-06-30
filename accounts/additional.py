@@ -33,7 +33,6 @@ def save_photo(photo, profile):
     cf = ContentFile(buffer.getvalue())
     image_name = profile.user.username + f'.{imf}'
     im = cloudinary.uploader.upload(InMemoryUploadedFile(cf, None, image_name, f'image/{imf.lower()}', cf.tell, None))
-
     # w, h = get_image_dimensions(photo)
     # min_value = min(w, h)
     # im = cloudinary.uploader.upload(photo).image(width=70, height=53, crop="scale")
