@@ -7,6 +7,7 @@ from cloudinary import CloudinaryImage
 import cloudinary
 import cloudinary.api
 import cloudinary.uploader
+from django.core.files.images import get_image_dimensions
 
 
 def get_profile_photo(user):
@@ -20,18 +21,24 @@ def get_profile_photo(user):
 
 
 def save_photo(photo, profile):
-    img = Image.open(photo)
-    imf = img.format
-    width, height = img.size
-    if width > height:
-        img = img.crop((0, 0, height, height))
-    if height > width:
-        img = img.crop((0, 0, width, width))
+    # img = Image.open(photo)
+    # imf = img.format
+    # width, height = img.size
+    # if width > height:
+    #     img = img.crop((0, 0, height, height))
+    # if height > width:
+    #     img = img.crop((0, 0, width, width))
+    #
+    # buffer = BytesIO()
+    # img.save(fp=buffer, format=imf)
+    # cf = ContentFile(buffer.getvalue())
+    # image_name = profile.user.username + f'.{imf}'
+    # im = cloudinary.uploader.upload(InMemoryUploadedFile(cf, None, image_name, f'image/{imf.lower()}', cf.tell, None))
 
-    buffer = BytesIO()
-    img.save(fp=buffer, format=imf)
-    cf = ContentFile(buffer.getvalue())
-    image_name = profile.user.username + f'.{imf}'
-    im = cloudinary.uploader.upload(InMemoryUploadedFile(cf, None, image_name, f'image/{imf.lower()}', cf.tell, None))
+    w, h = get_image_dimensions(photo)
+    min_value = min(w, h)
+    im = cloudinary.uploader.upload(photo, eager=[
+                                        {"width": min_value, "height": min_value, "crop": "crop"},
+                                        {"width": 200, "height": 200, "crop": "scale"}])
     profile.photo = im['url']
     profile.save()
