@@ -9,7 +9,6 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.utils import timezone
 
 from .models import Post, Profile, Follow
-from .forms import UploadForm
 from .additional import get_profile_photo, save_photo
 
 FullProfile = namedtuple('FullProfile', 'photo user')
@@ -51,16 +50,16 @@ def signup(request):
         if not re.match(r'^([A-Za-z0-9_]){2,30}$', username):
             message = 'Username can only consist of letters, digits and underscores. ' \
                       'Length should be at least 2 characters'
-            return render(request, 'accounts/login.html', {'message': message})
+            return render(request, 'accounts/registration.html', {'message': message})
 
         elif not re.match(r'^([A-Za-z0-9_]){6,20}$', password):
             message = 'Password can only consist of letters, digits and underscores. ' \
                       'Length should be at least 6 characters'
-            return render(request, 'accounts/login.html', {'message': message})
+            return render(request, 'accounts/registration.html', {'message': message})
 
         if User.objects.filter(username=username).exists():
             message = 'This username already taken'
-            return render(request, 'accounts/login.html', {'message': message})
+            return render(request, 'accounts/registration.html', {'message': message})
         else:
             try:
                 user = User.objects.create_user(username=username, password=password)
@@ -72,7 +71,7 @@ def signup(request):
                 return redirect(reverse('accounts:edit', args=[user.username]))
             except Exception:
                 message = 'Something went wrong'
-                return render(request, 'accounts/login.html', {'message': message})
+                return render(request, 'accounts/registration.html', {'message': message})
 
     return render(request, 'accounts/registration.html')
 
@@ -123,7 +122,7 @@ def profile(request, username):
         logout_request = request.POST.get('logout', None)
         if logout_request:
             logout(request)
-            return redirect('/me/welcome/')
+            return redirect(reverse('accounts:home'))
 
     status = 'NotFollowed'
     if username == request.user.username:
