@@ -7,7 +7,6 @@ from cloudinary import CloudinaryImage
 import cloudinary
 import cloudinary.api
 import cloudinary.uploader
-from django.core.files.images import get_image_dimensions
 
 
 def get_profile_photo(user):
