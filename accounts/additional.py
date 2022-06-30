@@ -21,22 +21,23 @@ def get_profile_photo(user):
 
 
 def save_photo(photo, profile):
-    # img = Image.open(photo)
-    # imf = img.format
-    # width, height = img.size
-    # if width > height:
-    #     img = img.crop((0, 0, height, height))
-    # if height > width:
-    #     img = img.crop((0, 0, width, width))
-    #
-    # buffer = BytesIO()
-    # img.save(fp=buffer, format=imf)
-    # cf = ContentFile(buffer.getvalue())
-    # image_name = profile.user.username + f'.{imf}'
-    # im = cloudinary.uploader.upload(InMemoryUploadedFile(cf, None, image_name, f'image/{imf.lower()}', cf.tell, None))
+    img = Image.open(photo)
+    imf = img.format
+    width, height = img.size
+    if width > height:
+        img = img.crop((0, 0, height, height))
+    if height > width:
+        img = img.crop((0, 0, width, width))
 
-    w, h = get_image_dimensions(photo)
-    min_value = min(w, h)
-    im = cloudinary.uploader.upload(photo, eager=f'c_crop,w_{min_value},h_{min_value}/w_200,h_200,c_scale,g_north')
+    img = img.resize((200, 200))
+    buffer = BytesIO()
+    img.save(fp=buffer, format=imf)
+    cf = ContentFile(buffer.getvalue())
+    image_name = profile.user.username + f'.{imf}'
+    im = cloudinary.uploader.upload(InMemoryUploadedFile(cf, None, image_name, f'image/{imf.lower()}', cf.tell, None))
+
+    # w, h = get_image_dimensions(photo)
+    # min_value = min(w, h)
+    # im = cloudinary.uploader.upload(photo).image(width=70, height=53, crop="scale")
     profile.photo = im['url']
     profile.save()
